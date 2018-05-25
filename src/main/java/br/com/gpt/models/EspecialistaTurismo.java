@@ -6,15 +6,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class Guia extends Usuario implements Serializable {
+public class EspecialistaTurismo extends Usuario implements Serializable {
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long codigo;
 
-	private String areaExpertise;
-	private double salarioHora;
+	private int salario;
+	private int anoNascimento;
 
 	public long getCodigo() {
 		return codigo;
@@ -24,23 +25,24 @@ public class Guia extends Usuario implements Serializable {
 		this.codigo = codigo;
 	}
 
-	public String getAreaExpertise() {
-		return areaExpertise;
+	public int getSalario() {
+		return salario;
 	}
 
-	public void setAreaExpertise(String areaExpertise) {
-		this.areaExpertise = areaExpertise;
+	public void setSalario(int salario) {
+		this.salario = salario;
 	}
 
-	public double getSalarioHora() {
-		return salarioHora;
+	public int getAnoNascimento() {
+		return anoNascimento;
 	}
 
-	public void setSalarioHora(double salarioHora) {
-		this.salarioHora = salarioHora;
+	public void setAnoNascimento(int anoNascimento) {
+		this.anoNascimento = anoNascimento;
 	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
+
 }
