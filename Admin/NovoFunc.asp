@@ -2,7 +2,10 @@
 <!--#INCLUDE file="../Includes/Connect.asp" -->
 
 <%
+<<<<<<< HEAD
 	If Session("Tipo") <> 1 then Response.Redirect("acessonegado.asp")
+=======
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
 	Set Conn = Server.CreateObject("ADODB.Connection") 
 	Conn.Open(StrConexao)
 %>
@@ -35,12 +38,17 @@
         </div>
         <div class="col-md-4 mb-3">
           <label for="validationDefault02">CPF</label>
+<<<<<<< HEAD
           <input type="text" class="form-control" id="CPF" name="CPF" placeholder="000.000.000-00" value="" required>
+=======
+          <input type="text" class="form-control" id="CPF" name="CPF" placeholder="999.999.999-99" value="" required>
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
         </div>
       </div>
       <div class="form-row">
         <div class="col-md-4 mb-3">
           <label for="validationDefault02">Telefone</label>
+<<<<<<< HEAD
           <input type="text" class="form-control MaskFone" id="Telefone" name="Telefone" placeholder="(00)0000-0000" value="" required>
         </div>
         <div class="col-md-4 mb-3">
@@ -78,13 +86,26 @@
 		end if
 		%>
         
+=======
+          <input type="text" class="form-control" name="Telefone" placeholder="(00)00000000" value="" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationDefault04">Celular</label>
+          <input type="text" class="form-control" name="Celular" placeholder="(00)900000000" value="" required>
+        </div>
+        <div class="col-md-4 mb-3"></div>
+        
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
         <input type="hidden" name="IdTipoFuncionario" value=<%=Request("IdTipoFuncionario")%>>    
         <input type="hidden" name="Action" value="Create">
     	<button class="btn btn-primary" type="submit">Salvar</button>
     </form>
+<<<<<<< HEAD
     <form action="<%=Request.ServerVariables("HTTP_REFERER")%>" method="post">
     <button class="btn btn-warning ml-1" type="submit">Cancelar</button>
     </form>
+=======
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
   </div>
 </div>
 </body>

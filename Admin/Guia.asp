@@ -2,11 +2,18 @@
 <!--#INCLUDE file="../Includes/Connect.asp" -->
 
 <%
+<<<<<<< HEAD
 If Session("Tipo") <> 1 then Response.Redirect("acessonegado.asp")
 Set Conn = Server.CreateObject("ADODB.Connection") 
 Conn.Open(StrConexao)
    
    
+=======
+Set Conn = Server.CreateObject("ADODB.Connection") 
+Conn.Open(StrConexao)
+
+
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
 Select case Request("Action")
 	Case "Excluir"
 '		on error resume next
@@ -36,6 +43,7 @@ Select case Request("Action")
 	Else
 		FuncionarioAlterado = "S"
 	End If
+<<<<<<< HEAD
 		
 	Case "Create"
 	
@@ -98,6 +106,8 @@ Select case Request("Action")
 	Response.Write("<br>SqlIdiomaDel: " & SqlIdiomaDel)
 	
 	conn.execute SqlIdiomaDel
+=======
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
 	
 End Select
 %>
@@ -118,6 +128,10 @@ End Select
   <h1>Guias</h1>
 </div>
 <div class="card-body">
+<<<<<<< HEAD
+=======
+<!-- Busca -->
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
 
 <% If FuncionarioExcluido="S" Then %>
 <div class="alert alert-success alert-dismissible" role="alert">
@@ -150,6 +164,7 @@ End Select
 <strong>ATENÇÃO!</strong> Erro ao alterar funcionário.
 </div>
 <% End If %>
+<<<<<<< HEAD
 																
 <% If FuncionarioCriado="S" Then %>
 <div class="alert alert-success alert-dismissible" role="alert">
@@ -172,6 +187,13 @@ End Select
 <h3>Buscar Guia</h3>
 <br />
 	<form method="post" action="<%=Request.ServerVariables("SCRIPT_NAME")%>" name="Busca" id="buscaFuncionario">
+=======
+
+
+<h3>Buscar Guia</h3>
+<br />
+<form method="post" action="/admin/CandidatoLista.asp" name="FrmBuscaCandidato" id="IdFrmBuscaCandidato">
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
   <input type="hidden" name="Action" id="IdAction" value="Busca">
   <div class="form-row">
     <div class="form-group col-6">
@@ -184,6 +206,7 @@ End Select
     </div>
     <div class="form-group col-2">
       <label for="IdCPF">CPF</label>
+<<<<<<< HEAD
       <input name="CPF" type="text" class="form-control text-center" id="CPF" placeholder="000.000.000-00" maxlength="14" value="">
     </div>
     <div class="form-group col-2">
@@ -204,6 +227,29 @@ End Select
                          Loop
                          rsSelect.Close
                          Set rsSelect = Nothing
+=======
+      <input name="CPF" type="text" class="form-control text-center" id="IdCPF" placeholder="CPF" maxlength="14" value="">
+    </div>
+    <div class="form-group col-2">
+      <label for="IdUF">Idioma</label>
+      <select class="form-control" name="UFEmissor" id="IdUFEmissor" required>
+        <option value="">Idioma</option>
+        <%
+'                         SqlSelect = "Select Nome from Idioma"
+'                         Set rsSelect = Conn.Execute(SqlSelect)
+'                         Do While Not rsSelect.EOF
+'						  If Request.Form("IdiomaEmissor")<>"" Then
+'							  If rsSelect("Nome") = Request.Form("IdiomaEmissor") Then Selecao = "selected" Else Selecao = "" End If
+'						  End If
+                          %>
+        <!--                         <option value="<%'=rsSelect("Nome")%>" <%'=Selecao%>><%'=rsSelect("Nome")%></option>
+-->
+        <%
+'                         rsSelect.MoveNext
+'                         Loop
+'                         rsSelect.Close
+'                         Set rsSelect = Nothing
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
                           %>
       </select>
     </div>
@@ -214,11 +260,19 @@ End Select
     </div>
   </div>
 </form>
+<<<<<<< HEAD
+=======
+
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
 <!-- Table -->
 
 <h3>Lista de Guias</h3>
 <br />
+<<<<<<< HEAD
 <table class="table table-bordered table-hover table-responsive-sm">
+=======
+<table class="table table-bordered table-hover table-responsive">
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
 <thead class="bg-secondary text-white">
   <tr>
     <th class="align-middle text-center">Nome</th>
@@ -226,6 +280,7 @@ End Select
     <th class="align-middle text-center">CPF</th>
     <th class="align-middle text-center">Telefone</th>
     <th class="align-middle text-center">Celular</th>
+<<<<<<< HEAD
     <th class="align-middle text-center">Idioma Falado</th>
 	  <th class="align-middle text-center"></th>
     <th class="align-middle text-center"><form action="novofunc.asp" method="post">
@@ -287,18 +342,49 @@ End Select
 		
     <td class="align-middle text-center"><form action="editarfunc.asp" method="post">
         <input type="hidden" name="IdFuncionario" value="<%=rsFuncionario("IdFuncionario")%>">
+=======
+    <th class="align-middle text-center"></th>
+    <th class="align-middle text-center"></th>
+  </tr>
+</thead>
+<tbody>
+  <%		
+    		SqlLista = "Select * from Funcionario as f where f.IdTipoFuncionario = 3"
+			Set rsGuia = server.CreateObject("ADODB.RECORDSET")
+			rsGuia.open SqlLista, conn
+			
+			if not (rsGuia.bof and rsGuia.eof) then
+			do while not rsGuia.eof
+    	%>
+  <tr class="justify-content-around">
+    <td class="align-middle text-center"><small><%=rsGuia("NomeFuncionario") %></small></td>
+    <td class="align-middle text-center"><small><%=rsGuia("DataNascimento") %></td>
+    <td class="align-middle text-center"><small><%=rsGuia("CPF") %></td>
+    <td class="align-middle text-center"><small><%=rsGuia("Telefone") %></td>
+    <td class="align-middle text-center"><small><%=rsGuia("Celular") %></td>
+    <td class="align-middle text-center"><form action="editarfunc.asp" method="post">
+        <input type="hidden" name="IdFuncionario" value="<%=rsGuia("IdFuncionario")%>">
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
         <input type="hidden" name="Action" value="Alterar">
         <button type="submit" class="btn btn-primary btn-sm" id="botao"> <i class="far fa-edit"></i>&nbsp;Editar </button>
       </form></td>
     <td class="align-middle text-center">
     <form action="<%=Request.ServerVariables("SCRIPT_NAME")%>" method="post">
+<<<<<<< HEAD
         <input type="hidden" name="IdFuncionario" value="<%=rsFuncionario("IdFuncionario")%>">
+=======
+        <input type="hidden" name="IdFuncionario" value="<%=rsGuia("IdFuncionario")%>">
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
         <input type="hidden" name="Action" value="Excluir">
         <button type="submit" class="btn btn-danger btn-sm" id="botao"> <i class="far fa-trash-alt"></i>&nbsp;Excluir </button>
       </form></td>
   </tr>
   <%
+<<<<<<< HEAD
 			rsFuncionario.moveNext
+=======
+			rsGuia.moveNext
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
 			loop
 		
 		eLSE
@@ -314,8 +400,13 @@ End Select
 </div>
 </body>
 </html><%
+<<<<<<< HEAD
 rsFuncionario.Close
 Set rsFuncionario = Nothing
+=======
+rsGuia.Close
+Set rsGuia = Nothing
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
 
 Conn.close
 Set Conn = nothing

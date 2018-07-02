@@ -37,8 +37,12 @@ If Request("Action") = "Logar" Then
 	
 	If ErroBranco="N" then
 		Set rsUsuario = Server.CreateObject("ADODB.Recordset")
+<<<<<<< HEAD
 		SqlUsuario = "Select * from Usuario where LoginUsuario ='" & Replace(request("Login"),"'","''") & "' and Senha = '" & Request("Senha") & "'" &_
 		"and Tipo = 1"
+=======
+		SqlUsuario = "Select * from Usuario where LoginUsuario ='" & Replace(request("Login"),"'","''") & "' and Senha = '" & Request("Senha") & "'"
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
 		rsUsuario.Open SqlUsuario , Conn
 		
 	'	Response.Write ("<br>" & SqlUsuario & "<br>")
@@ -49,6 +53,12 @@ If Request("Action") = "Logar" Then
 				Session("LoginUsuario") = rsUsuario("LoginUsuario")				
 				Session("NomeUsuario") = rsUsuario("NomeUsuario")
 				Session("TipoUsuario") = rsUsuario("Tipo")
+<<<<<<< HEAD
+=======
+				Session("SenhaAlterada") = rsUsuario("SenhaAlterada")
+				Session("DadosAlterados") = rsUsuario("DadosAlterados")
+				Session("UF") = rsUsuario("UF")
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
 				Session("ID") = Session.SessionID		
 	'			Response.Write("<br>LOGADO<br>")
 				
@@ -58,7 +68,11 @@ If Request("Action") = "Logar" Then
 					Session("DesabilitaFiliada") = ""
 				End If
 
+<<<<<<< HEAD
 				Response.Redirect("passeio.asp")		
+=======
+				Response.Redirect("Inicio.asp")		
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
 		Else
 			Logado="N"
 			ErroUsuario = "S"
@@ -94,10 +108,17 @@ End If
         <form method="post" action="<%=Request.ServerVariables("SCRIPT_NAME")%>" role="login" name="FormLogin" id="IdFormLogin" class="needs-validation" novalidate>        
               <br />
               <div class="text-center">
+<<<<<<< HEAD
               <i class="fas fa-users fa-5x"></i>
     		  </div>
               <hr>
               <h4><p class="text-center text-secondary"><strong>GPT <br> Área Administrativa</strong></p></h4>
+=======
+	              <img src="../Imagens/sbp-logo-header.png" class="img-responsive" width="90%" alt="" />
+    		  </div>
+              <hr>
+              <h4><p class="text-center text-secondary"><strong>Sistema de Incrição <br> Área Administrativa</strong></p></h4>
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
               <hr>
           	  <input type="hidden" name="Action" value="Logar">
               <div>
@@ -135,7 +156,11 @@ End If
                 <% End If %>
                 <hr>
                 <div class=" text-center">
+<<<<<<< HEAD
 	                <img src="../Imagens/logo.png" class="img-responsive" width="10%" alt="gpt"  title="gpt">
+=======
+	                <img src="../Imagens/LogoFuturoWeb.png" class="img-responsive" width="30%" alt="Futuro em Foco"  title="Futuro em Foco">
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
                 </div>
                 <br />
         </form>

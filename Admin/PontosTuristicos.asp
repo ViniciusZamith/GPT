@@ -2,6 +2,7 @@
 <!--#INCLUDE file="../Includes/Connect.asp" -->
 
 <%
+<<<<<<< HEAD
 If Session("Tipo") <> 1 then Response.Redirect("acessonegado.asp")
 Set Conn = Server.CreateObject("ADODB.Connection") 
 Conn.Open(StrConexao)
@@ -59,6 +60,10 @@ Select case Request("Action")
 	End If
 	
 End Select  
+=======
+Set Conn = Server.CreateObject("ADODB.Connection") 
+Conn.Open(StrConexao)
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
 %>
 
 <!DOCTYPE html>
@@ -81,7 +86,11 @@ End Select
 
 <h3>Buscar Pontos Turisticos</h3>
 <br />
+<<<<<<< HEAD
 				<form method="post" action="/admin/PontosTuristicos.asp" name="FrmBuscaCandidato" id="IdFrmBuscaCandidato">
+=======
+<form method="post" action="/admin/CandidatoLista.asp" name="FrmBuscaCandidato" id="IdFrmBuscaCandidato">
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
   <input type="hidden" name="Action" id="IdAction" value="Busca">
   <div class="form-row">
     <div class="form-group col-6">
@@ -93,6 +102,7 @@ End Select
       <input name="Localizacao" type="text" class="form-control text-center" placeholder="Localização" id="IdLocalizacao" value="">
     </div>
     <div class="form-group col-2">
+<<<<<<< HEAD
         <label for="validationDefault02">Disponibilidade</label>
           <select class="form-control" name="disponibilidadePonto" id="disponibilidadePonto" >
         	<option value="Manhã">Manhã</option>
@@ -104,6 +114,10 @@ End Select
 			<option value="Integral">Integral</option>
       	  </select>
         </div>
+=======
+      <label for="IdDisponibilidade">Disponibilidade</label>
+      <input name="Disponibilidade" type="text" class="form-control text-center" id="IdDisponibilidade" placeholder="Disponibilidade" maxlength="14" value="">
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
     </div>
     
     <div class="form-group col text-right">
@@ -125,6 +139,7 @@ End Select
     <th class="align-middle text-center">Descrição</th>
     <th class="align-middle text-center">Localização</th>
     <th class="align-middle text-center">Disponibilidade</th>
+<<<<<<< HEAD
 	  <th class="align-middle text-center">
 	  <form action="NovoPonto.asp" method="post">
 		<input type="hidden" name="IdTipoFuncionario" value="2">
@@ -154,6 +169,18 @@ End Select
 			
 			end if
 			
+=======
+    <th class="align-middle text-center"></th>
+    <th class="align-middle text-center"></th>
+  </tr>
+</thead>
+<tbody>
+  <%
+    		SqlLista = "Select * from PontosTuristicos"
+			Set rsPonto = server.CreateObject("ADODB.RECORDSET")
+			rsPonto.open SqlLista, conn
+			
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
 			if not (rsPonto.bof and rsPonto.eof) then
 			do while not rsPonto.eof
     	%>
@@ -162,6 +189,7 @@ End Select
     <td class="align-middle text-center"><small><%=rsPonto("descricaoPonto") %></td>
     <td class="align-middle text-center"><small><%=rsPonto("localizacaoPonto") %></td>
     <td class="align-middle text-center"><small><%=rsPonto("disponibilidadePonto") %></td>
+<<<<<<< HEAD
     <td class="align-middle text-center"><form action="EditarPonto.asp" method="post">
         <input type="hidden" name="idPonto" value="<%=rsPonto("idPonto")%>">
         <input type="hidden" name="Action" value="Alterar">
@@ -171,6 +199,22 @@ End Select
     <form action="<%=Request.ServerVariables("SCRIPT_NAME")%>" method="post">
         <input type="hidden" name="idPonto" value="<%=rsPonto("idPonto")%>">
         <input type="hidden" name="Action" value="Excluir">
+=======
+    <td class="align-middle text-center"><form action="CandidatoVisualiza.asp" method="post">
+        <input type="hidden" name="IdInscricao" value="2">
+        <input type="hidden" name="Inscricao" value="201800100002">
+        <input type="hidden" name="SqlBusca" value="Select Top(50) * from vwCandidato where 1=1  Order by IdInscricao">
+        <input type="hidden" name="SqlCount" value="Select  Count(*) as Total  from vwCandidato where 1=1 ">
+        <input type="hidden" name="Action" value="Visualiza">
+        <button type="submit" class="btn btn-primary btn-sm" id="botao"> <i class="far fa-edit"></i>&nbsp;Editar </button>
+      </form></td>
+    <td class="align-middle text-center"><form action="CandidatoVisualiza.asp" method="post">
+        <input type="hidden" name="IdInscricao" value="2">
+        <input type="hidden" name="Inscricao" value="201800100002">
+        <input type="hidden" name="SqlBusca" value="Select Top(50) * from vwCandidato where 1=1  Order by IdInscricao">
+        <input type="hidden" name="SqlCount" value="Select  Count(*) as Total  from vwCandidato where 1=1 ">
+        <input type="hidden" name="Action" value="Visualiza">
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
         <button type="submit" class="btn btn-danger btn-sm" id="botao"> <i class="far fa-trash-alt"></i>&nbsp;Excluir </button>
       </form></td>
   </tr>

@@ -2,7 +2,10 @@
 <!--#INCLUDE file="../Includes/Connect.asp" -->
 
 <%
+<<<<<<< HEAD
 If Session("Tipo") <> 1 then Response.Redirect("acessonegado.asp")
+=======
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
 Set Conn = Server.CreateObject("ADODB.Connection") 
 Conn.Open(StrConexao)
 
@@ -136,13 +139,18 @@ End Select
 
 <h3>Buscar Especialista em Turismo</h3>
 <br />
+<<<<<<< HEAD
 	<form method="post" action="<%=Request.ServerVariables("SCRIPT_NAME")%>" name="Busca" id="buscaFuncionario">
+=======
+<form method="post" action="/admin/CandidatoLista.asp" name="FrmBuscaCandidato" id="IdFrmBuscaCandidato">
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
   <input type="hidden" name="Action" id="IdAction" value="Busca">
   <div class="form-row">
     <div class="form-group col-6">
       <label for="IdNome">Nome</label>
       <input name="Nome" type="text" class="form-control" id="IdNome" placeholder="Digite um Nome ou parte do nome para Buscar" maxlength="60" value="">
     </div>
+<<<<<<< HEAD
     <div class="form-group col-3">
       <label for="IdNascimento">Nascimento</label>
       <input name="Nascimento" type="date" class="form-control text-center" id="IdNascimento" value="">
@@ -152,6 +160,38 @@ End Select
       <input name="CPF" type="text" class="form-control text-center" id="CPF" placeholder="000.000.000-00" maxlength="14" value="">
     </div>
 
+=======
+    <div class="form-group col-2">
+      <label for="IdNascimento">Nascimento</label>
+      <input name="Nascimento" type="date" class="form-control text-center" id="IdNascimento" value="">
+    </div>
+    <div class="form-group col-2">
+      <label for="IdCPF">CPF</label>
+      <input name="CPF" type="text" class="form-control text-center" id="IdCPF" placeholder="CPF" maxlength="14" value="">
+    </div>
+    <div class="form-group col-2">
+      <label for="IdCNHCat">CNH Categoria</label>
+      <select class="form-control" name="CNHCat" id="idCNHCatEmissor" required>
+        <option value="">Categoria</option>
+        <%
+'                         SqlSelect = "Select Nome from Idioma"
+'                         Set rsSelect = Conn.Execute(SqlSelect)
+'                         Do While Not rsSelect.EOF
+'						  If Request.Form("IdiomaEmissor")<>"" Then
+'							  If rsSelect("Nome") = Request.Form("IdiomaEmissor") Then Selecao = "selected" Else Selecao = "" End If
+'						  End If
+                          %>
+        <!--                         <option value="<%'=rsSelect("Nome")%>" <%'=Selecao%>><%'=rsSelect("Nome")%></option>
+-->
+        <%
+'                         rsSelect.MoveNext
+'                         Loop
+'                         rsSelect.Close
+'                         Set rsSelect = Nothing
+                          %>
+      </select>
+    </div>
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
     <div class="form-group col text-right">
       <hr>
       <button type="submit" class="btn btn-primary" id="botao"><i class="fa fa-search"></i>&nbsp;Buscar</button>
@@ -181,6 +221,7 @@ End Select
   </tr>
 </thead>
 <tbody>
+<<<<<<< HEAD
   <%		  
   			Set rsFuncionario = server.CreateObject("ADODB.RECORDSET")
   			
@@ -201,6 +242,13 @@ End Select
 			
 			end if
 			
+=======
+  <%
+    		SqlLista = "Select * from Funcionario as f where f.IdTipoFuncionario = 2"
+			Set rsFuncionario = server.CreateObject("ADODB.RECORDSET")
+			rsFuncionario.open SqlLista, conn
+			
+>>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
 			if not (rsFuncionario.bof and rsFuncionario.eof) then
 			do while not rsFuncionario.eof
     	%>
