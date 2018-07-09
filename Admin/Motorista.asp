@@ -2,10 +2,7 @@
 <!--#INCLUDE file="../Includes/Connect.asp" -->
 
 <%
-<<<<<<< HEAD
-If Session("Tipo") <> 1 then Response.Redirect("acessonegado.asp")
-=======
->>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
+If Session("TipoUsuario") <> 1 then Response.Redirect("acessonegado.asp")
 Set Conn = Server.CreateObject("ADODB.Connection") 
 Conn.Open(StrConexao)
 
@@ -40,7 +37,6 @@ Select case Request("Action")
 		FuncionarioAlterado = "S"
 	End If
 	
-<<<<<<< HEAD
 	Case "Create"
 	
 		SqlCreate = "INSERT INTO [Funcionario] " &_
@@ -70,8 +66,6 @@ Select case Request("Action")
 			MotoristaCriado = "S"
 		End If															   	
 	
-=======
->>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
 End Select
 %>
 
@@ -127,11 +121,7 @@ End Select
 
 <h3>Buscar Motorista</h3>
 <br />
-<<<<<<< HEAD
 <form method="post" action="<%=Request.ServerVariables("SCRIPT_NAME")%>" name="Busca" id="buscaFuncionario">
-=======
-<form method="post" action="/admin/CandidatoLista.asp" name="FrmBuscaCandidato" id="IdFrmBuscaCandidato">
->>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
   <input type="hidden" name="Action" id="IdAction" value="Busca">
   <div class="form-row">
     <div class="form-group col-6">
@@ -144,7 +134,6 @@ End Select
     </div>
     <div class="form-group col-2">
       <label for="IdCPF">CPF</label>
-<<<<<<< HEAD
       <input name="CPF" type="text" class="form-control text-center" id="CPF" placeholder="000.000.000-00" maxlength="14" value="">
     </div>
     <div class="form-group col-2">
@@ -165,29 +154,6 @@ End Select
                          Loop
                          rsSelect.Close
                          Set rsSelect = Nothing
-=======
-      <input name="CPF" type="text" class="form-control text-center" id="IdCPF" placeholder="CPF" maxlength="14" value="">
-    </div>
-    <div class="form-group col-2">
-      <label for="IdCNHCat">CNH Categoria</label>
-      <select class="form-control" name="CNHCat" id="idCNHCatEmissor" required>
-        <option value="">Categoria</option>
-        <%
-'                         SqlSelect = "Select Nome from Idioma"
-'                         Set rsSelect = Conn.Execute(SqlSelect)
-'                         Do While Not rsSelect.EOF
-'						  If Request.Form("IdiomaEmissor")<>"" Then
-'							  If rsSelect("Nome") = Request.Form("IdiomaEmissor") Then Selecao = "selected" Else Selecao = "" End If
-'						  End If
-                          %>
-        <!--                         <option value="<%'=rsSelect("Nome")%>" <%'=Selecao%>><%'=rsSelect("Nome")%></option>
--->
-        <%
-'                         rsSelect.MoveNext
-'                         Loop
-'                         rsSelect.Close
-'                         Set rsSelect = Nothing
->>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
                           %>
       </select>
     </div>
@@ -215,7 +181,6 @@ End Select
     <th class="align-middle text-center">Validade</th>
     <th class="align-middle text-center">Tipo</th>
     <th class="align-middle text-center"></th>
-<<<<<<< HEAD
     <th class="align-middle text-center"><form action="novofunc.asp" method="post">
         <input type="hidden" name="IdTipoFuncionario" value="4">
         <input type="hidden" name="Action" value="Alterar">
@@ -244,17 +209,6 @@ End Select
 			
 			end if
 			
-=======
-    <th class="align-middle text-center"></th>
-  </tr>
-</thead>
-<tbody>
-  <%
-    		SqlLista = "Select * from Funcionario as f where f.IdTipoFuncionario = 4"
-			Set rsFuncionario = server.CreateObject("ADODB.RECORDSET")
-			rsFuncionario.open SqlLista, conn
-			
->>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
 			if not (rsFuncionario.bof and rsFuncionario.eof) then
 			do while not rsFuncionario.eof
     	%>
@@ -267,11 +221,7 @@ End Select
     <td class="align-middle text-center"><small><%=rsFuncionario("CNH") %></td>
     <td class="align-middle text-center"><small><%=rsFuncionario("ValidadeCNH") %></td>
     <td class="align-middle text-center"><small><%=rsFuncionario("CategoriaCNH") %></td>
-<<<<<<< HEAD
     <td class="align-middle text-center"><form action="editarfunc.asp" method="post">
-=======
-    <td class="align-middle text-center"><form action="editarmoto.asp" method="post">
->>>>>>> d1681b082b769ad0dc6cb6859c0143dbccba7b49
         <input type="hidden" name="IdFuncionario" value="<%=rsFuncionario("IdFuncionario")%>">
         <input type="hidden" name="Action" value="Alterar">
         <button type="submit" class="btn btn-primary btn-sm" id="botao"> <i class="far fa-edit"></i>&nbsp;Editar </button>

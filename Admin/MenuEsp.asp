@@ -1,6 +1,7 @@
 ﻿<%
 	
 	If Session("ID") <> Session.SessionID then Response.Redirect("index.asp")
+	If Session("TipoUsuario") <> "3" then Response.Redirect("index.asp")
 
 %>
 
@@ -8,24 +9,20 @@
 <div class="container">
 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
   <div class="navbar-nav d-flex justify-content-around" style="font-size: 14px; width: 80%;">
-      <a class="nav-item nav-link active" style="color: white;" href="">Home</a> <a
-          class="nav-item nav-link active" style="color: white;" href="">Roteiros</a> <a
-          class="nav-item nav-link active" style="color: white;" href="">Hotéis Conveniados</a> <a
-          class="nav-item nav-link active" style="color: white;" href="">Ajuda</a>
+      <a class="nav-item nav-link active" style="color: white;" href="../Index.asp">Home</a> <a
+          class="nav-item nav-link active" style="color: white;" href="../RoteiroMenu.asp">Roteiros</a> <a
+          class="nav-item nav-link active" style="color: white;" href="../HoteisConveniados.asp">Hotéis Conveniados</a> <a
+          class="nav-item nav-link active" style="color: white;" href=../"Help.asp">Ajuda</a>
       	<div class="dropdown">
   			<a class="btn btn-info btn-sm dropdown-toggle mt-1" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     			Configurações
   			</a>
 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="../admin/cliente.asp">Cliente</a>
-            <a class="dropdown-item" href="../admin/especialista.asp">Especialista em Turismo</a>
-            <a class="dropdown-item" href="../admin/hotel.asp">Hotel</a>
-            <a class="dropdown-item" href="../admin/guia.asp">Guia</a>
-            <a class="dropdown-item" href="../admin/motorista.asp">Motorista</a>
-            <a class="dropdown-item" href="../admin/veiculo.asp">Veiculo</a>
-            <a class="dropdown-item" href="../admin/pontosturisticos.asp">Pontos Turisticos</a>
-            <a class="dropdown-item" href="../admin/passeio.asp">Passeio</a>
+            <a class="dropdown-item" href="../admin/Passeio.asp">Passeio</a>
+            <a class="dropdown-item" href="../admin/AlocarRecursos.asp">Recurso</a>
+            <a class="dropdown-item" href="../admin/Roteiro.asp">Roteiro</a>
+            <a class="dropdown-item disabled" href="../admin/Relatorio.asp">Relatório</a>
             </div>
 		</div>
   </div>

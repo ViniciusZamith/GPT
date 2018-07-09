@@ -2,7 +2,7 @@
 <!--#INCLUDE file="../Includes/Connect.asp" -->
 
 <%
-	If Session("Tipo") <> 1 then Response.Redirect("acessonegado.asp")
+	If Session("TipoUsuario") <> 1 then Response.Redirect("acessonegado.asp")
 	Set Conn = Server.CreateObject("ADODB.Connection") 
 	Conn.Open(StrConexao)
 %>
