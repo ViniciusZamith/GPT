@@ -15,10 +15,10 @@ DataFuso = Year(Fuso) & "-" & Month(Fuso) & "-" & Day(Fuso) & " " & Hour(Fuso) &
 
 DataGravacao = DataLocal
 
-host   ="187.84.228.118,5003"
-usuario="gpt" 
-senha  ="Diego9981@2238"
-banco  ="gpt"
+host   ="gptmysql.mysql.dbaas.com.br"
+usuario="gptmysql" 
+senha  ="Dicamagab9981"
+banco  ="gptmysql"
 
 StrConexao = "Provider=SQLNCLI11;SERVER="&host&";DATABASE="&banco&";UID="&usuario&";PWD="&senha&";"
 
