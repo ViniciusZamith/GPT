@@ -10,26 +10,55 @@ Conn.Open(StrConexao)
 <!doctype html>
 <html>
 <head>
-   <!--#INCLUDE file = "Includes/Head.asp" --> 
+   <!--#INCLUDE file = "Includes/Head.asp" -->
+   <style>
+   	#imgSlide {
+		height: 700px;
+	}
+   </style> 
 </head>
-
-<style>
-
-</style>
-
 <body>
-      <header id="topo" class="col-md-12 text-center form-row container-fluid">
-      </header>
-		<!--#INCLUDE file="MenuNavegacao.asp" --> 
-        <br />
-        <div class="container">
-        <div class="card">
-        	<div class="card-header">TESTE CARD</div>
-            <div class="card-body">
-            	Conteúdo principal da página
+	<!--#INCLUDE file="MenuNavegacao.asp" -->         
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img id="imgSlide" class="d-block w-100" src="Imagens/bibliotecaNacionalSlide.jpg" alt="Biblioteca Nacional RJ">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>"Muito bom o passeio, realmente enriquecedor."</h5>
+                    <p>- Lucas Souza </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img id="imgSlide" class="d-block w-100" src="Imagens/museuDoAmanhaSlide.jpg" alt="Museu do Amanhã">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>"O futuro é bem melhor do que eu imaginava, impressionante!"</h5>
+                    <p>- Victor Cezar </p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img id="imgSlide" class="d-block w-100" src="Imagens/mamSlide.jpg" alt="Museu de Arte Moderna">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>"O guia conhece cada canto do museu, perguntei sobre tudo!"</h5>
+                    <p>- Breno Baronte </p>
+                </div>
             </div>
         </div>
-        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Próximo</span>
+        </a>
+    </div>
+    <div class="container">
+    </div>
 <br />
 </body>
 </html>

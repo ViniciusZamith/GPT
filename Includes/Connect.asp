@@ -15,12 +15,17 @@ DataFuso = Year(Fuso) & "-" & Month(Fuso) & "-" & Day(Fuso) & " " & Hour(Fuso) &
 
 DataGravacao = DataLocal
 
-host   ="gptmysql.mysql.dbaas.com.br"
-usuario="gptmysql" 
-senha  ="Dicamagab9981"
-banco  ="gptmysql"
+host    ="gptmysql.mysql.dbaas.com.br"
+usuario ="gptmysql" 
+senha   ="Dicamagab9981"
+banco   ="gptmysql"
+porta   ="3306"
 
-StrConexao = "Provider=SQLNCLI11;SERVER="&host&";DATABASE="&banco&";UID="&usuario&";PWD="&senha&";"
+'StrConexao = "Provider=SQLNCLI11;SERVER="&host&";DATABASE="&banco&";UID="&usuario&";PWD="&senha&";"
+
+'DRIVER={MySQL ODBC 5.3 ANSI Driver};SERVER=ENDEREÇO_DA_BASE_MYSQL;PORT=3306;DATABASE=NOME_DA_BASE;USER=NOME_DA_BASE;PASSWORD=SENHA_DA_BASE;OPTION=3;
+
+StrConexao = "DRIVER={MySQL ODBC 5.3 ANSI Driver};SERVER="&host&";PORT="&porta&"DATABASE="&banco&";USER="&usuario&";PASSWORD="&senha&"; OPTION=3;"
 
 SET conexao = Server.CreateObject("ADODB.Connection")
  
