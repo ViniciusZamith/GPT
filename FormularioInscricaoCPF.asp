@@ -180,9 +180,9 @@ Select Case PaginaConfirma
                         <div class="col text-right align-content-center">
 							<br />
 
-							<button type="submit" class="btn btn-primary m-2">&nbsp;Continuar&nbsp;<i class="far fa-arrow-circle-right"></i></button>
+							<button type="submit" class="btn btn-primary m-2">&nbsp;Continuar&nbsp;<i class="fa fa-arrow-circle-right"></i></button>
                             <a href="Logout.asp" target="_self" class="btn btn-danger m-2 float-right">
-                                <i class="far fa-sign-out-alt"></i>&nbsp;Sair
+                                <i class="fa fa-sign-out-alt"></i>&nbsp;Sair
                             </a>
 
                         </div>
@@ -248,14 +248,14 @@ Select Case PaginaConfirma
                         <div class="col-3 text-left">
                           <br />	
                           <a href="SelecionaConcurso.asp" class="btn btn-danger" id="botao" >
-                          	<i class="far fa-arrow-circle-left"></i>&nbsp; Voltar</a>
-                          <a href="Logout.asp" class="btn btn-warning" id="botao" ><i class="far fa-ban"></i>&nbsp;Cancelar</a>
+                          	<i class="fa fa-arrow-circle-left"></i>&nbsp; Voltar</a>
+                          <a href="Logout.asp" class="btn btn-warning" id="botao" ><i class="fa fa-ban"></i>&nbsp;Cancelar</a>
                         </div>
                         <div class="col-7 text-left">
                         </div>
                         <div class="col-2 text-right align-content-center">
 							<br />
-							<button type="submit" class="btn btn-primary" disabled>&nbsp;Continuar&nbsp;<i class="far fa-arrow-circle-right"></i></button>
+							<button type="submit" class="btn btn-primary" disabled>&nbsp;Continuar&nbsp;<i class="fa fa-arrow-circle-right"></i></button>
                         </div>
                     </div>
                  </form>

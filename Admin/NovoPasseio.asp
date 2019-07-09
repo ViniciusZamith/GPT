@@ -2,7 +2,7 @@
 <!--#INCLUDE file="../Includes/Connect.asp" -->
 
 <%
-	If Session("Tipo") <> 1 then Response.Redirect("acessonegado.asp")
+	If Session("TipoUsuario") <> 1 then Response.Redirect("acessonegado.asp")
 	Set Conn = Server.CreateObject("ADODB.Connection") 
 	Conn.Open(StrConexao)
 %>
@@ -68,10 +68,10 @@
 		  <select class="form-control" name="UF" id="IdUF" >
           <option value="">Selecione o Estado</option>
           <%
-                         SqlSelect = "Select * from Uf"
+                         SqlSelect = "Select * from UF"
                          Set rsSelect = Conn.Execute(SqlSelect)
                          Do While Not rsSelect.EOF
-						  If Request.Form("Uf")<>"" Then
+						  If Request.Form("UF")<>"" Then
 							  If rsSelect("UF") = Request.Form("UF") Then Selecao = "selected" Else Selecao = "" End If
 						  End If
                           %>

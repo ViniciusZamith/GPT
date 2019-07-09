@@ -43,7 +43,9 @@ Conn.Open(StrConexao)
                             response.write "As credenciais estão incorretas. Verifique por favor"
 
                             ElseIf Len(CStr(retornoPagSeguro.selectSingleNode("/checkout/code").Text)) = 32 Then
-                                      response.write "<a href='https://sandbox.pagseguro.uol.com.br/v2/checkout/payment.html?code=" & CStr(retornoPagSeguro.selectSingleNode("/checkout/code").Text) & "'> Link para o pagamento <a></a>"
+                                      'response.write "<a href='https://sandbox.pagseguro.uol.com.br/v2/checkout/payment.html?code=" & CStr(retornoPagSeguro.selectSingleNode("/checkout/code").Text) & "'> Link para o pagamento <a></a>"
+                                      urlFinal = "https://sandbox.pagseguro.uol.com.br/v2/checkout/payment.html?code=" & CStr(retornoPagSeguro.selectSingleNode("/checkout/code").Text)
+                                      Response.Redirect(urlFinal)
                             End If
 
                             'Em caso de erros é executado este trecho'
@@ -70,6 +72,7 @@ Conn.Open(StrConexao)
          email = "vinicius.zamith@uniriotec.br"
          token = "34EF8038244842C4AFB5B4A4EA110575"
          
+         nome = "&senderName=" & "Diego Barcante"
          
          'Definindo os valores do post'
          postdata = postdata & "currency=BRL"
@@ -78,13 +81,8 @@ Conn.Open(StrConexao)
          postdata = postdata & "&itemAmount1=24300.00"
          postdata = postdata & "&itemQuantity1=1"
          postdata = postdata & "&itemWeight1=1000"
-         postdata = postdata & "&itemId2=0002"
-         postdata = postdata & "&itemDescription2=Notebook Rosa"
-         postdata = postdata & "&itemAmount2=25600.00"
-         postdata = postdata & "&itemQuantity2=2"
-         postdata = postdata & "&itemWeight2=750"
          postdata = postdata & "&reference=REF1234"
-         postdata = postdata & "&senderName=Jose Comprador"
+         postdata = postdata & nome
          postdata = postdata & "&senderAreaCode=11"
          postdata = postdata & "&senderPhone=56273440"
          postdata = postdata & "&senderEmail=c21259707305409864095@sandbox.pagseguro.com.br"

@@ -44,11 +44,11 @@
           <input class="form-control mr-sm-2" type="search"
               placeholder="Procure por passeios ou pontos turísticos..."
               aria-label="Search" style="width: 450px;">
-          <button class="btn btn-warning my-2 my-sm-0" type="submit"><i class="far fa-search"></i>&nbsp;Buscar</button>
+          <button class="btn btn-warning my-2 my-sm-0" type="submit"><i class="fa fa-search"></i>&nbsp;Buscar</button>
         </form>
         
         <a class="nav-item nav-link ml-auto" href="/GPT"> 
-        <i class="fas fa-user fa-2x" style="color:black;"></i>
+        <i class="fa fa-user fa-2x" style="color:black;"></i>
         </a>
         <div class="navbar-nav" style="display: block; padding: 0px;">
             <a class="nav-link active" style="padding:0px;">Olá&nbsp;<%=Session("NomeUsuario")%>!</a>

@@ -169,7 +169,7 @@ End Select
 					<input type="hidden" name="IdAlocacao" value="<%=rsAlocarRecurso("IdAlocacao")%>">
                     <input type="hidden" name="Action" value="Alter">
                     <button type="submit" class="btn btn-primary btn-sm" id="botao">
-                        <i class="far fa-edit"></i>&nbsp;Editar
+                        <i class="fa fa-edit"></i>&nbsp;Editar
                     </button>
                 </form>
              </td>
@@ -177,7 +177,7 @@ End Select
     			<form action="<%=Request.ServerVariables("SCRIPT_NAME")%>" method="post" onsubmit="return confirm('Realmente deseja excluir?');">
         		<input type="hidden" name="IdAlocacao" value="<%=rsAlocarRecurso("IdAlocacao")%>">
         		<input type="hidden" name="Action" value="Excluir">
-        		<button type="submit" class="btn btn-danger btn-sm" id="botao"> <i class="far fa-trash-alt"></i>&nbsp;Excluir </button>
+        		<button type="submit" class="btn btn-danger btn-sm" id="botao"> <i class="fa fa-trash-alt"></i>&nbsp;Excluir </button>
       </form></td>
         </tr>
         <%

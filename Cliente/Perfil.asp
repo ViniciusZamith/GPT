@@ -136,13 +136,13 @@ Select case Request("Action")
     <td class="align-middle text-center"><form action="editarCliente.asp" method="post">
         <input type="hidden" name="IdCliente" value="<%=rsCliente("IdCliente")%>">
         <input type="hidden" name="Action" value="Alterar">
-        <button type="submit" class="btn btn-primary btn-sm" id="botao"> <i class="far fa-edit"></i>&nbsp;Editar </button>
+        <button type="submit" class="btn btn-primary btn-sm" id="botao"> <i class="fa fa-edit"></i>&nbsp;Editar </button>
       </form></td>
     <td class="align-middle text-center">
     <form action="<%=Request.ServerVariables("SCRIPT_NAME")%>" method="post">
         <input type="hidden" name="IdCliente" value="<%=rsCliente("IdCliente")%>">
         <input type="hidden" name="Action" value="Excluir">
-        <button type="submit" class="btn btn-danger btn-sm" id="botao"> <i class="far fa-trash-alt"></i>&nbsp;Excluir </button>
+        <button type="submit" class="btn btn-danger btn-sm" id="botao"> <i class="fa fa-trash-alt"></i>&nbsp;Excluir </button>
       </form></td>
   </tr>
   <%

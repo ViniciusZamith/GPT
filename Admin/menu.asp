@@ -17,7 +17,7 @@
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item"> <a class="nav-link active" href="#">Dados</a> </li>
       <li class="nav-item"> <a class="nav-link" href="#">Adicionar</a> </li>
-      <li class="nav-item"> <a class="nav-link" href="#"><i class="fas fa-minus-octagon" style="color:red"></i></a> </li>
+      <li class="nav-item"> <a class="nav-link" href="#"><i class="fa fa-minus-octagon" style="color:red"></i></a> </li>
     </ul>
   </div>
   <div class="card-body">
@@ -28,7 +28,7 @@
           <div class="input-group">
             <input type="text" class="form-control" id="validationDefault01" placeholder="Nome" value="#" required>
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button"><i class="far fa-pencil"></i></button>
+              <button class="btn btn-outline-secondary" type="button"><i class="fa fa-pencil"></i></button>
             </div>
           </div>
         </div>

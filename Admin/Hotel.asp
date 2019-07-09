@@ -199,13 +199,13 @@ End Select
     <td class="align-middle text-center"><form action="editarHotel.asp" method="post">
         <input type="hidden" name="IdHotel" value="<%=rsHotel("IdHotel")%>">
         <input type="hidden" name="Action" value="Alterar">
-        <button type="submit" class="btn btn-primary btn-sm" id="botao"> <i class="far fa-edit"></i>&nbsp;Editar </button>
+        <button type="submit" class="btn btn-primary btn-sm" id="botao"> <i class="fa fa-edit"></i>&nbsp;Editar </button>
       </form></td>
     <td class="align-middle text-center">
     <form action="<%=Request.ServerVariables("SCRIPT_NAME")%>" method="post">
         <input type="hidden" name="IdHotel" value="<%=rsHotel("IdHotel")%>">
         <input type="hidden" name="Action" value="Excluir">
-        <button type="submit" class="btn btn-danger btn-sm" id="botao"> <i class="far fa-trash-alt"></i>&nbsp;Excluir </button>
+        <button type="submit" class="btn btn-danger btn-sm" id="botao"> <i class="fa fa-trash-alt"></i>&nbsp;Excluir </button>
       </form></td>
   </tr>
   <%

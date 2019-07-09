@@ -38,7 +38,7 @@ Conn.Open(StrConexao)
 			rsTipo.Close
 			Set rsTipo = Nothing
 
-   			Set rsUF = Conn.Execute("Select * from UF where IdUF = " & rsPasseio("UF"))
+   			Set rsUF = Conn.Execute("Select * from UF where UF = '" & rsPasseio("UF") & "';")
 			UF = rsUF("UF")
 			rsUF.Close
 			Set rsUF = Nothing																				 
@@ -50,12 +50,19 @@ Conn.Open(StrConexao)
 			<h5 class="card-title"><%=rsPasseio("NomePasseio") %></h5>
 			<p class="card-text"><%=rsPasseio("DescricaoPasseio") %></p>
 			<p class="card-text"><small class="text-warning">
-				<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></small></p>
+				<i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></small></p>
 			<p class="card-text"><small class="text-muted"><%=rsPasseio("DataPasseio") %></small></p>
 		</div>
 		<div class="card-footer text-danger">
 			<p class="card-text text-muted"><small>A partir de:</small></p>
       		<p class="card-text">R$20,00</p>
+			<form action="Passeio.asp" method="post">
+				<input type="hidden" name="IdPasseio" value="<%=rsPasseio("IdPasseio")%>">
+				<input type="hidden" name="Action" value="Reservar">
+				<button type="submit" class="btn btn-primary btn-sm" id="botao">
+					<i class="fa fa-edit"></i>&nbsp;Reservar
+				</button>
+            </form>
     	</div>
 	</div>
 <%

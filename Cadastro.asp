@@ -7,38 +7,49 @@ Set Conn = Server.CreateObject("ADODB.Connection")
 Conn.Open(StrConexao)
 
 if Request("Action") = "Cadastro" then
+'	If Request("Login")="" or Request("Senha")="" Then
+'		ErroBranco = "S"
+'	Else
+'		ErroBranco = "N"
+'	End If
+'	
+'	ArrData = Split(Request(DataNascimento),"/")
+'	DataGravar = ArrData(2) & "-" & ArrData(1) & "-" & ArrData(0)
+	
+	'If ErroBranco="N" then	
 
-		SqlCreate = "Declare @IdUsuario int INSERT INTO [Usuario] " &_
-							"([NomeUsuario]"		&_
-							",[LoginUsuario]"		&_
-							",[Senha]"				&_
-							",[Tipo]"				&_
-							",[Email])	"				&_
+		SqlCreateUsuario = "INSERT INTO gptmysql.Usuario " &_
+							"(NomeUsuario"		&_
+							",LoginUsuario"		&_
+							",Senha"				&_
+							",Tipo"				&_
+							",Email)	"				&_
 							" VALUES " &_
 							"('" & Request("NomeCliente")		& "', "  	&_
 							"'" & Request("Login") 				& "', " 	&_
 							"'" & Request("Senha") 				& "', " 	&_
 							"2" 							 	& ", " 		&_
-							"'" & Request("EmailCliente") 		& "')"		&_
-							" set @IdUsuario = SCOPE_IDENTITY()"			&_
-							"Declare @IdCliente int INSERT INTO [Cliente] " 	&_
-						"([NomeCliente]" 			&_
-						",[CPFCliente]" 			&_
-						",[EmailCliente]" 			&_
-						",[DataNascimento]" 			&_
-						", [idUsuario])"				&_
-						" VALUES " &_ 
-						"('" & Request("NomeCliente") 		& "', "  	&_
-						"'"	& Request("CPFCliente") 		& "', "  	&_	
-						"'" & Request("EmailCliente") 		& "', "		&_
-						"'" & Request("DataNascimento") 	& "', "		&_
-						"@IdUsuario)"                                   &_
+							"'" & Request("EmailCliente") 		& "');"
+
+    SqlCreateCliente = "INSERT INTO gptmysql.Cliente " 	&_
+						  "(NomeCliente" 			&_
+						  ",CPFCliente" 			&_
+						  ",EmailCliente" 			&_
+						  ",DataNascimento" 			&_
+						  ",idUsuario)"				&_
+						  " VALUES " &_ 
+						  "('" & Request("NomeCliente") 		& "', "  	&_
+						  "'"	& Request("CPFCliente") 		& "', "  	&_	
+						  "'" & Request("EmailCliente") 		& "', "		&_
+						  "'" & Request("DataNascimento") & "', "			&_
+						  "LAST_INSERT_ID());" 
 	
-			Response.Write("<br>SqlCreate: " & SqlCreate)
+			Response.Write("<br>SqlCreate: " & SqlCreateUsuario)
 			Conn.BeginTrans
 			
 			
-			Conn.execute SqlCreate
+			Conn.execute SqlCreateUsuario
+      Conn.execute SqlCreateCliente
 
 			If Err.Number <> 0 Then
 				ClienteCriado = "N"
@@ -214,7 +225,7 @@ Response.Write("<br>EmailGoogle: " & Request.QueryString("Email"))
                   </div>
               </div>
               <div class="form-group">
-              	<button class="btn btn-lg btn-primary btn-block" type="submit"><i class="far fa-sign-in-alt"></i>&nbsp;Cadastrar</button>
+              	<button class="btn btn-lg btn-primary btn-block" type="submit"><i class="fa fa-sign-in-alt"></i>&nbsp;Cadastrar</button>
               </div>
               </form>
 <%'CAMPOS EM BRANCO 

@@ -1,6 +1,6 @@
 <%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%>
-<!--#INCLUDE file = "Includes/Connect.asp" --> 
-<!--#INCLUDE file = "Includes/Funcoes.asp" -->
+<!--#INCLUDE file = "../Includes/Connect.asp" --> 
+<!--#INCLUDE file = "../Includes/Funcoes.asp" -->
 <%
 
 Set Conn = Server.CreateObject("ADODB.Connection") 
@@ -81,7 +81,7 @@ End If
                   </div>
                   <br>
                   <div class="form-group">
-                  <button class="btn btn-lg btn-primary btn-block" type="submit"><i class="far fa-sign-in-alt"></i>&nbsp;Entrar</button>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit"><i class="fa fa-sign-in-alt"></i>&nbsp;Entrar</button>
                   </div>
               </div>
 <%'CAMPOS EM BRANCO 

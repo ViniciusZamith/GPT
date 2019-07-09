@@ -25,7 +25,7 @@ porta   ="3306"
 
 'DRIVER={MySQL ODBC 5.3 ANSI Driver};SERVER=ENDEREÇO_DA_BASE_MYSQL;PORT=3306;DATABASE=NOME_DA_BASE;USER=NOME_DA_BASE;PASSWORD=SENHA_DA_BASE;OPTION=3;
 
-StrConexao = "DRIVER={MySQL ODBC 5.3 ANSI Driver};SERVER="&host&";PORT="&porta&"DATABASE="&banco&";USER="&usuario&";PASSWORD="&senha&"; OPTION=3;"
+StrConexao = "DRIVER={MySQL ODBC 5.3 ANSI Driver};SERVER="&host&";PORT="&porta&";DATABASE="&banco&";USER="&usuario&";PASSWORD="&senha&"; OPTION=3;"
 
 SET conexao = Server.CreateObject("ADODB.Connection")
  
