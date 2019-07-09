@@ -9,7 +9,7 @@
               <a class="nav-item nav-link active" style="color: white;" href="">Ajuda</a>
           </div>
           <div class="navbar-nav d-flex justify-content-end" style="width: 100%;">
-              <a class="nav-item nav-link" href="/GPT">
+              <a class="nav-item nav-link" href="#">
                   <i class="fa fa-shopping-cart"></i>
               </a>
               <span class="navbar-text mr-5" style="color: #ffffff">
@@ -34,7 +34,7 @@
           <button class="btn btn-warning my-2 my-sm-0" type="submit"><i class="fa fa-search"></i>&nbsp;Buscar</button>
         </form>
         
-        <a class="nav-item nav-link ml-auto" href="/GPT"> 
+        <a class="nav-item nav-link ml-auto" href="EditarPerfil.asp"> 
         	<i class="fa fa-user fa-2x" style="color:black;"></i>
         </a>
 		<%
