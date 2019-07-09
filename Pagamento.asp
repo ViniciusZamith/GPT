@@ -77,10 +77,10 @@ Conn.Open(StrConexao)
          'Definindo os valores do post'
          postdata = postdata & "currency=BRL"
          postdata = postdata & "&itemId1=0001"
-         postdata = postdata & "&itemDescription1=Notebook Prata"
-         postdata = postdata & "&itemAmount1=24300.00"
+         postdata = postdata & "&itemDescription1=Museu"
+         postdata = postdata & "&itemAmount1=20.00"
          postdata = postdata & "&itemQuantity1=1"
-         postdata = postdata & "&itemWeight1=1000"
+         postdata = postdata & "&itemWeight1=0"
          postdata = postdata & "&reference=REF1234"
          postdata = postdata & nome
          postdata = postdata & "&senderAreaCode=11"
