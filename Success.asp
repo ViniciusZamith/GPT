@@ -127,15 +127,6 @@ end if
                         <div>
                             <span class="client-email">Email: <%=rsCliente("EmailCliente")%></span>
                         </div>
-                        <div>
-                            <span className="amount-clients">Quantidade pessoas: 2</span>
-                        </div>
-                        <div>
-                            <span className="trip-name">Nome do Passeio: Museu</span>
-                        </div>
-                        <div>
-                            <span className="money-spent">Preço pago: R$ 60,00</span>
-                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
