@@ -1,6 +1,6 @@
 <%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%>
-<!--#INCLUDE file = "Includes/Connect.asp" --> 
-<!--#INCLUDE file = "Includes/Funcoes.asp" -->
+<!--#INCLUDE file="Includes/Connect.asp" --> 
+<!--#INCLUDE file="Includes/Funcoes.asp" -->
 <%
 
 Set Conn = Server.CreateObject("ADODB.Connection") 
@@ -49,7 +49,7 @@ End If
 <!doctype html>
 <html>
 <head>
-   <!--#INCLUDE file = "Includes/Head.asp" --> 
+   <!--#INCLUDE file="Includes/Head.asp" --> 
 </head>
 
 <style>

@@ -9,12 +9,12 @@ Conn.Open(StrConexao)
 If Request.QueryString("Id_Pagamento") <> "" then
 
 	SqlPagamento = "UPDATE gptmysql.Pagamento set tokenPagSeguro = '" & Request.QueryString("Id_Pagamento") & "'" &_
-	" where idPagamento = (Select idPagamento from gptmysql.Pagamento order by idPagamento desc limit 1)"
+	" where idPagamento = (Select pag from (Select idPagamento as pag from gptmysql.Pagamento order by idPagamento desc limit 1) as p)"
 	
 	Response.Write("<br>SqlPagamento: " & SqlPagamento)
 	Conn.execute SqlPagamento
 	
-	Response.redirect("Home.asp")
+	Response.redirect("Index.asp")
 
 end if
 

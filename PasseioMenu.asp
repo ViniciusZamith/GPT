@@ -55,7 +55,7 @@ Conn.Open(StrConexao)
 		</div>
 		<div class="card-footer text-danger">
 			<p class="card-text text-muted"><small>A partir de:</small></p>
-      		<p class="card-text">R$20,00</p>
+      		<p class="card-text">R$<%=rsPasseio("PrecoCri") %></p>
 			<form action="Passeio.asp" method="post">
 				<input type="hidden" name="IdPasseio" value="<%=rsPasseio("IdPasseio")%>">
 				<input type="hidden" name="Action" value="Reservar">

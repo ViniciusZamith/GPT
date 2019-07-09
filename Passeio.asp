@@ -26,10 +26,10 @@ rsPasseio.open SqlLista, conn
     <h1><%=rsPasseio("NomePasseio")%></h1>
   </div>
   <div class="card-body">
-	<form action="Pagamento.asp" method="post">
+	<form action="Reserva.asp" method="post">
     <input type="hidden" name="Action" value="Reserva">
     <label for="validationDefault08">Número de Adultos</label>
-		  <select class="form-control" name="PrecoAdt" required>
+		  <select class="form-control" name="QtdAdt" required>
         	<option value="1"  selected > 1 </option>
             <option value="2" > 2 </option>
             <option value="3" > 3 </option>
@@ -37,7 +37,7 @@ rsPasseio.open SqlLista, conn
             <option value="5" > 5 </option>
            </select>
 	<label for="validationDefault08">Número de Crianças</label>
-		  <select class="form-control" name="PrecoCri" required>
+		  <select class="form-control" name="QtdCri" required>
             <option value="0" selected > 0 </option>
         	<option value="1" > 1 </option>
             <option value="2" > 2 </option>
@@ -47,6 +47,8 @@ rsPasseio.open SqlLista, conn
      <br />      
      
 		<input type="hidden" name="IdPasseio" value="<%=rsPasseio("IdPasseio")%>">
+    <input type="hidden" name="PrecoCri" value="<%=rsPasseio("PrecoCri")%>">
+    <input type="hidden" name="PrecoAdt" value="<%=rsPasseio("PrecoAdt")%>">
 		<button class="btn btn-success" type="submit">Reservar</button>
 	</form>
   </div>
