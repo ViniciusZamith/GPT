@@ -28,7 +28,10 @@ end if
             width: 100vw;
             height: 100vh;
             text-align: center;
+<<<<<<< HEAD
             padding-top: 15px;
+=======
+>>>>>>> 1afb16d83e030b69e6ac7acd7e318dabffa7025c
         }
 
         .payment-success-container {
